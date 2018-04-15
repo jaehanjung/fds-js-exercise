@@ -6,18 +6,77 @@
 ```
 range(3, 6); -> [3, 4, 5, 6]
 ```
+```js
+function range(start, end){
+  const arr = [];
+  for(let i =start; i <=end;i++){
+    arr.push(i)
+  }
+  return arr
+}
+```
 
 ### 문제 2
 
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
+```js
+function sum(arr){
+  let num = 0;
+  for(let i = 0; i< arr.length;i++){
+  num +=  arr[i];   // num = num + arr[i]
+  }  
+  return num;
+}
+//  forEach 구문
+function sum(arr){
+  let num = 0;
+  arr.forEach(item => {
+    num +=item;
+  });
+  return num;
+}
+
+// for of 구문
+function sum(arr){
+  let num = 0;
+  for (const item of arr){
+    num += item;
+  }
+  return num;
+}
+```
 
 ### 문제 3
 
 배열을 입력받아, falsy인 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+과제
+```js
+let arr = [0,2,"han",NaN,false]
 
+function newArr (str) {
+let resultArr = [];
+for (let i =0; i < str.length; i++){
+  if (str[i]){
+  resultArr.push(str[i]);
+}
+}return resultArr;
+}
+
+```
 ### 문제 4
 
 배열을 입력받아, 중복된 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+과제
+```js
+let str = [1,2,3,4,5,5,5]
+
+let arr2 =[]
+for(let i =0; i< str.length;i++){
+  if(!arr2.includes(str[i])){
+    arr2.push(str[i])
+  }
+}
+```
 
 ### 문제 5
 
@@ -55,7 +114,18 @@ coins(263, [100, 50, 10, 5, 1]);
 1
 1
 ```
-
+과제
+```js
+function coins(money, arr){
+  for(let i =0; i< arr.length;i++){
+    if(money - arr[i] >= 0) {
+      money -= arr[i]
+      console.log(arr[i]);
+      i-=1
+    } 
+  }
+}
+```
 ### 문제 8
 
 수 타입의 값만 들어있는 배열을 입력받아, 해당 배열을 오름차순 정렬하는 함수를 작성하세요. (`Array.prototype.sort`를 사용하지 않고 작성해보세요. [선택 정렬](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)을 참고하세요.)
